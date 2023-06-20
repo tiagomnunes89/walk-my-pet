@@ -1,0 +1,307 @@
+openapi: 3.0.0
+info:
+  title: Exemplo de API para UML
+  version: 1.0.0
+servers:
+  - url: http://api.example.com/v1
+paths:
+  /cadastros:
+    get:
+      summary: Retorna uma lista de cadastros
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Cadastro'
+    post:
+      summary: Cria um novo cadastro
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Cadastro'
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Cadastro'
+
+  /clientes:
+    get:
+      summary: Retorna uma lista de clientes
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Cliente'
+    post:
+      summary: Cria um novo cliente
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Cliente'
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Cliente'
+
+  /enderecos:
+    get:
+      summary: Retorna uma lista de endereços
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Endereco'
+    post:
+      summary: Cria um novo endereço
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Endereco'
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Endereco'
+
+  /pets:
+    get:
+      summary: Retorna uma lista de pets
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Pet'
+    post:
+      summary: Cria um novo pet
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Pet'
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Pet'
+
+  /servicos:
+    get:
+      summary: Retorna uma lista de serviços
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Servico'
+    post:
+      summary: Cria um novo serviço
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Servico'
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Servico'
+
+  /pagamentos:
+    get:
+      summary: Retorna uma lista de pagamentos
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Pagamento'
+    post:
+      summary: Cria um novo pagamento
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Pagamento'
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Pagamento'
+
+components:
+  schemas:
+    Cadastro:
+      type: object
+      properties:
+        cadastroID:
+          type: integer
+          format: int64
+        dataAbertura:
+          type: string
+          format: date
+        origem:
+          type: string
+        clienteID:
+          type: integer
+
+    Cliente:
+      type: object
+      properties:
+        ClienteID:
+          type: integer
+          format: int64
+        Username:
+          type: string
+        Senha:
+          type: string
+        Nome:
+          type: string
+        DataNascimento:
+          type: string
+          format: date
+        Identidade:
+          type: string
+        Telefone:
+          type: string
+        Email:
+          type: string
+        EnderecoID:
+          type: integer
+        Pets:
+          type: object
+        Pagamentos:
+          type: object
+
+    Endereco:
+      type: object
+      properties:
+        EnderecoID:
+          type: integer
+          format: int64
+        Logradouro:
+          type: string
+        Tipo:
+          type: string
+        Complemento:
+          type: string
+        Bairro:
+          type: string
+        Cidade:
+          type: string
+        Estado:
+          type: string
+        Pais:
+          type: string
+        CEP:
+          type: string
+
+    Pet:
+      type: object
+      properties:
+        PetID:
+          type: integer
+          format: int64
+        Espécie:
+          type: string
+        Nome:
+          type: string
+        Idade:
+          type: integer
+        Raça:
+          type: string
+        Porte:
+          type: string
+        InformacoesAdicionais:
+          type: string
+        servicos:
+          type: integer
+
+    Servico:
+      type: object
+      properties:
+        servicoID:
+          type: integer
+          format: int64
+        preco:
+          type: number
+          format: float
+        tipo:
+          type: string
+        status:
+          type: string
+        historicoId:
+          type: integer
+
+    Pagamento:
+      type: object
+      properties:
+        pagamentoID:
+          type: integer
+          format: int64
+        servicos:
+          type: integer
+        total:
+          type: number
+          format: float
+        statusPagto:
+          type: string
+        tipoPagto:
+          type: string
+
+    Historico:
+      type: object
+      properties:
+        historicoID:
+          type: integer
+          format: int64
+        servicoID:
+          type: integer
+        petID:
+          type: integer
+        descricao:
+          type: string
