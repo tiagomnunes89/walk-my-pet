@@ -192,73 +192,73 @@ components:
     Cliente:
       type: object
       properties:
-        ClienteID:
+        clienteID:
           type: integer
           format: int64
-        Username:
+        username:
           type: string
-        Senha:
+        senha:
           type: string
-        Nome:
+        nome:
           type: string
-        DataNascimento:
+        dataNascimento:
           type: string
           format: date
-        Identidade:
+        identidade:
           type: string
-        Telefone:
+        telefone:
           type: string
-        Email:
+        email:
           type: string
-        EnderecoID:
+        enderecoID:
           type: integer
-        Pets:
+        pets:
           type: object
-        Pagamentos:
+        pagamentos:
           type: object
 
     Endereco:
       type: object
       properties:
-        EnderecoID:
+        enderecoID:
           type: integer
           format: int64
-        Logradouro:
+        logradouro:
           type: string
-        Tipo:
+        tipo:
           type: string
-        Complemento:
+        complemento:
           type: string
-        Bairro:
+        bairro:
           type: string
-        Cidade:
+        cidade:
           type: string
-        Estado:
+        estado:
           type: string
-        Pais:
+        pais:
           type: string
-        CEP:
+        cep :
           type: string
 
     Pet:
       type: object
       properties:
-        PetID:
+        petID:
           type: integer
           format: int64
-        Espécie:
+        especie:
           type: string
-        Nome:
+        nome:
           type: string
-        Idade:
+        idade:
           type: integer
-        Raça:
+        raca:
           type: string
-        Porte:
+        porte:
           type: string
-        InformacoesAdicionais:
+        informacoesAdicionais:
           type: string
-        servicos:
+        servico:
           type: integer
 
     Servico:
