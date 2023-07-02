@@ -20,6 +20,15 @@ The app is a platform that connects pet owners and caregivers. It allows users t
   </tr>
 </table>
 
+## Controllers:
+### REST:
+API REST, também chamada de API RESTful, é uma interface de programação de aplicações (API ou API web) que está em conformidade com as restrições do estilo de arquitetura REST, permitindo a interação com serviços web RESTful. REST é a sigla em inglês para "Representational State Transfer", que em português significa transferência de estado representacional. Essa arquitetura foi criada pelo cientista da computação Roy Fielding
+<table>
+  <tr>
+    <td><img src="https://miro.medium.com/v2/resize:fit:676/0*1-0GdlZkEdlKf80d.jpg" style="height:120px; float:left;"></td>
+  </tr>
+</table>
+
 ## Repositorys:
 ### Hibernate:
 Hibernate é uma ferramenta para mapeamento objeto/relacional para ambientes Java. O termo mapeamento objeto/relacional (ORM) refere-se à técnica de mapeamento de uma representação de dados em um modelo de objetos para um modelo de dados relacional baseado em um esquema E/R. O Hibernate não cuida somente do mapeamento das classes Java para tabelas do banco de dados (e dos tipos de dados Java para os tipos de dados SQL), mas também provê facilidades para consulta e retornar os dados da consulta, e pode reduzir significativamente o tempo de desenvolvimento em contrapartida ao alto tempo gasto pelas operações manuais dos dados feitas com SQL e JDBC.
