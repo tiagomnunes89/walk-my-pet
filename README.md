@@ -20,6 +20,21 @@ The app is a platform that connects pet owners and caregivers. It allows users t
   </tr>
 </table>
 
+## Repositorys:
+### Hibernate:
+Hibernate é uma ferramenta para mapeamento objeto/relacional para ambientes Java. O termo mapeamento objeto/relacional (ORM) refere-se à técnica de mapeamento de uma representação de dados em um modelo de objetos para um modelo de dados relacional baseado em um esquema E/R. O Hibernate não cuida somente do mapeamento das classes Java para tabelas do banco de dados (e dos tipos de dados Java para os tipos de dados SQL), mas também provê facilidades para consulta e retornar os dados da consulta, e pode reduzir significativamente o tempo de desenvolvimento em contrapartida ao alto tempo gasto pelas operações manuais dos dados feitas com SQL e JDBC.
+
+O Hibernate é uma ferramenta de consulta e persistência objeto/relacional de alta performance. Uma das soluções ORM mais flexíveis e poderosas no mercado, ele faz o mapeamento de classes Java para tabelas de banco de dados e de tipos de dados Java para tipos de dados SQL. Ele fornece consultas e facilidades para retorno dos dados que reduzem significativamente o tempo de desenvolvimento. A meta do projeto do Hibernate é aliviar os desenvolvedores de 95% das tarefas comuns de programação relacionadas à persistência, como a codificação manual com SQL e a API JDBC. O Hibernate gera o SQL para a aplicação, não necessitando o tratamento dos “result sets” (comuns nas conexões manuais com JDBC), faz a conversão entre registros e objetos e permite que sua aplicação seja portável para qualquer banco de dados SQL.
+
+### SQL:
+SQL é uma linguagem padrão para trabalhar com bancos de dados relacionais. Ela é uma linguagem declarativa e que não necessita de profundos conhecimentos de programação para que alguém possa começar a escrever queries, as consultas e pedidos, que trazem resultados de acordo com o que você está buscando. SQL significa Standard Query Language, literalmente a linguagem padrão para realizar queries.
+
+A linguagem SQL é utilizada de maneira relativamente parecida entre os principais bancos de dados relacionais do mercado: Oracle, MySQL, MariaDB, PostgreSQL, Microsoft SQL Server, entre muitos outros. Cada um tem suas características, sendo o MySQL e o PostgreSQL extremamente populares por possuírem versões gratuitas e de código aberto.
+
+### JPA:
+JPA é um framework leve, baseado em POJOS (Plain Old Java Objects) para persistir objetos Java. A Java Persistence API, diferente do que muitos imaginam, não é apenas um framework para Mapeamento Objeto-Relacional (ORM - Object-Relational Mapping), ela também oferece diversas funcionalidades essenciais em qualquer aplicação corporativa.
+Atualmente temos praticamente todas as aplicações de grande porte que utilizam JPA para persistir objetos Java. JPA provê diversas funcionalidades para os programadores.
+
 ## Team
 
 This project was developed as the final work of the Monolithic Backend Project course taught by Professor Camilo Barreto by students Tiago Nunes & Flavius Gama
