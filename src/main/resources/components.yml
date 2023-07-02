@@ -173,6 +173,34 @@ paths:
               schema:
                 $ref: '#/components/schemas/Pagamento'
 
+  /historicos:
+    get:
+      summary: Retorna uma lista de pagamentos
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Pagamento'
+    post:
+      summary: Cria um novo pagamento
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Pagamento'
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Pagamento'
+
 components:
   schemas:
     Cadastro:
