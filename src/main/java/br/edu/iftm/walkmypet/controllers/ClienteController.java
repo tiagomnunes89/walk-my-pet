@@ -1,5 +1,6 @@
 package br.edu.iftm.walkmypet.controllers;
 
+import br.edu.iftm.walkmypet.data.vo.ClienteVO;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -8,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 public class ClienteController {
 
     @PostMapping
-    public ResponseEntity<?> post(@RequestBody Object object) {
+    public ResponseEntity<?> post(@RequestBody ClienteVO clienteVO) {
         return ResponseEntity.ok(null);
     }
 
@@ -23,7 +24,7 @@ public class ClienteController {
     }
 
     @PatchMapping("/{id}")
-    public ResponseEntity<?> patch(@PathVariable Long id) {
+    public ResponseEntity<?> patch(@PathVariable Long id, @RequestBody ClienteVO clienteVO) {
         return ResponseEntity.ok(null);
     }
 

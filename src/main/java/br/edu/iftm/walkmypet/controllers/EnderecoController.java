@@ -1,5 +1,6 @@
 package br.edu.iftm.walkmypet.controllers;
 
+import br.edu.iftm.walkmypet.data.vo.EnderecoVO;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -7,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/enderecos")
 public class EnderecoController {
     @PostMapping
-    public ResponseEntity<?> post(@RequestBody Object object) {
+    public ResponseEntity<?> post(@RequestBody EnderecoVO enderecoVO) {
         return ResponseEntity.ok(null);
     }
 
@@ -22,7 +23,7 @@ public class EnderecoController {
     }
 
     @PatchMapping("/{id}")
-    public ResponseEntity<?> patch(@PathVariable Long id) {
+    public ResponseEntity<?> patch(@PathVariable Long id, @RequestBody EnderecoVO enderecoVO) {
         return ResponseEntity.ok(null);
     }
 

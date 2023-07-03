@@ -1,5 +1,6 @@
 package br.edu.iftm.walkmypet.controllers;
 
+import br.edu.iftm.walkmypet.data.vo.CadastroVO;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -8,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 public class CadastroController {
 
     @PostMapping
-    public ResponseEntity<?> post(@RequestBody Object object) {
+    public ResponseEntity<?> post(@RequestBody CadastroVO cadastroVO) {
         return ResponseEntity.ok(null);
     }
 
@@ -23,7 +24,7 @@ public class CadastroController {
     }
 
     @PatchMapping("/{id}")
-    public ResponseEntity<?> patch(@PathVariable Long id) {
+    public ResponseEntity<?> patch(@PathVariable Long id, @RequestBody CadastroVO cadastroVO ) {
         return ResponseEntity.ok(null);
     }
 

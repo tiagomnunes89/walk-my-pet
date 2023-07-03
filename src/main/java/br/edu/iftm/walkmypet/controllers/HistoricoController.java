@@ -1,5 +1,6 @@
 package br.edu.iftm.walkmypet.controllers;
 
+import br.edu.iftm.walkmypet.data.vo.HistoricoVO;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -8,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 public class HistoricoController {
 
     @PostMapping
-    public ResponseEntity<?> post(@RequestBody Object object) {
+    public ResponseEntity<?> post(@RequestBody HistoricoVO historicoVO) {
         return ResponseEntity.ok(null);
     }
 
@@ -23,7 +24,7 @@ public class HistoricoController {
     }
 
     @PatchMapping("/{id}")
-    public ResponseEntity<?> patch(@PathVariable Long id) {
+    public ResponseEntity<?> patch(@PathVariable Long id, @RequestBody HistoricoVO historicoVO) {
         return ResponseEntity.ok(null);
     }
 
