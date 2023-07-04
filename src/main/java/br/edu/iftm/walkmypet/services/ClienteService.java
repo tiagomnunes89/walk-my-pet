@@ -3,7 +3,7 @@ package br.edu.iftm.walkmypet.services;
 import br.edu.iftm.walkmypet.controllers.ClienteController;
 import br.edu.iftm.walkmypet.data.vo.ClienteVO;
 import br.edu.iftm.walkmypet.mapper.DozerMapper;
-import br.edu.iftm.walkmypet.models.Cliente;
+import br.edu.iftm.walkmypet.model.Cliente;
 import br.edu.iftm.walkmypet.repositories.ClienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -36,24 +36,6 @@ public class ClienteService {
             return cliente;
         }
         return null;
-    }
-
-    public List<ClienteVO> findClienteByName(String name) {
-        List<Cliente> clienteDbList = repository.findClienteByName(name);
-        var clientes = DozerMapper.parseListObject(clienteDbList, ClienteVO.class);
-        clientes.forEach(cliente -> cliente.add(linkTo(methodOn(ClienteController.class).findById(cliente.getClienteID()))
-                .withSelfRel()
-        ));
-        return clientes;
-    }
-
-    public List<ClienteVO> findClienteByUsername(String username) {
-        List<Cliente> clienteDbList = repository.findClienteByUsername(username);
-        var clientes = DozerMapper.parseListObject(clienteDbList, ClienteVO.class);
-        clientes.forEach(cliente -> cliente.add(linkTo(methodOn(ClienteController.class).findById(cliente.getClienteID()))
-                .withSelfRel()
-        ));
-        return clientes;
     }
 
     public ClienteVO save(ClienteVO clienteVO) {

@@ -1,0 +1,898 @@
+openapi: 3.0.0
+info:
+  title: Exemplo de API para UML
+  version: 1.0.0
+servers:
+  - url: http://api.example.com/v1
+paths:
+  /cadastros:
+    get:
+      tags:
+        - cadastro
+      summary: Retorna uma lista de cadastros
+      operationId: getAllCadastro
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Cadastro'
+    post:
+      tags:
+        - cadastro
+      summary: Cria um novo cadastro
+      operationId: postCadastro
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Cadastro'
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Cadastro'
+
+  /cadastros/{id}:
+    get:
+      tags:
+        - cadastro
+      summary: Retorna um cadastros
+      operationId: getByIdCadastro
+      parameters:
+        - name: id
+          in: path
+          description: ID of to return
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Cadastro'
+        '400':
+          description: Invalid ID supplied
+        '404':
+          description: Not found
+    patch:
+      tags:
+        - cadastro
+      summary: Cria um novo cadastro
+      operationId: pachByIdCadastro
+      parameters:
+        - name: id
+          in: path
+          description: ID of to return
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Cadastro'
+      responses:
+        '200':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Cadastro'
+        '400':
+          description: Invalid ID supplied
+        '404':
+          description: Not found
+    delete:
+      tags:
+        - cadastro
+      summary: Cria um novo cadastro
+      operationId: deleteByIdCadastro
+      parameters:
+        - name: id
+          in: path
+          description: ID of to return
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Cadastro'
+      responses:
+        '400':
+          description: Invalid pet value
+
+  /clientes:
+    get:
+      tags:
+        - cliente
+      summary: Retorna uma lista de clientes
+      operationId: getAllClientes
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Cliente'
+    post:
+      tags:
+        - cliente
+      summary: Cria um novo cliente
+      operationId: postCliente
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Cliente'
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Cliente'
+  /clientes/{id}:
+    get:
+      tags:
+        - cliente
+      summary: Retorna um cliente
+      operationId: getByIdCliente
+      parameters:
+        - name: id
+          in: path
+          description: ID of to return
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Cliente'
+        '400':
+          description: Invalid ID supplied
+        '404':
+          description: Not found
+    patch:
+      tags:
+        - cliente
+      summary: Cria um novo cliente
+      operationId: pachByIdCliente
+      parameters:
+        - name: id
+          in: path
+          description: ID of to return
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Cliente'
+      responses:
+        '200':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Cliente'
+        '400':
+          description: Invalid ID supplied
+        '404':
+          description: Not found
+    delete:
+      tags:
+        - cliente
+      summary: Cria um novo cliente
+      operationId: deleteByIdCliente
+      parameters:
+        - name: id
+          in: path
+          description: ID of to return
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '400':
+          description: Invalid pet value
+
+  /enderecos:
+    get:
+      tags:
+        - endereco
+      summary: Retorna uma lista de endereços
+      operationId: getAllEnderecos
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Endereco'
+    post:
+      tags:
+        - endereco
+      summary: Cria um novo endereço
+      operationId: postEndereco
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Endereco'
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Endereco'
+
+  /enderecos/{id}:
+    get:
+      tags:
+        - endereco
+      summary: Retorna um endereco
+      operationId: getByIdEnderecos
+      parameters:
+        - name: id
+          in: path
+          description: ID of to return
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Endereco'
+        '400':
+          description: Invalid ID supplied
+        '404':
+          description: Not found
+    patch:
+      tags:
+        - endereco
+      summary: Cria um novo endereco
+      operationId: pachByIdEndereco
+      parameters:
+        - name: id
+          in: path
+          description: ID of to return
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Endereco'
+      responses:
+        '200':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Endereco'
+        '400':
+          description: Invalid ID supplied
+        '404':
+          description: Not found
+    delete:
+      tags:
+        - endereco
+      summary: Cria um novo endereco
+      operationId: deleteByIdEndereco
+      parameters:
+        - name: id
+          in: path
+          description: ID of to return
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '400':
+          description: Invalid pet value
+
+  /pets:
+    get:
+      tags:
+        - pet
+      summary: Retorna uma lista de pets
+      operationId: getAllPets
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Pet'
+    post:
+      tags:
+        - pet
+      summary: Cria um novo pet
+      operationId: postPet
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Pet'
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Pet'
+  /pets/{id}:
+    get:
+      tags:
+        - pet
+      summary: Retorna um pet
+      operationId: getByIdPets
+      parameters:
+        - name: id
+          in: path
+          description: ID of to return
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Pet'
+        '400':
+          description: Invalid ID supplied
+        '404':
+          description: Not found
+    patch:
+      tags:
+        - pet
+      summary: Cria um novo pet
+      operationId: pachByIdPet
+      parameters:
+        - name: id
+          in: path
+          description: ID of to return
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Pet'
+      responses:
+        '200':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Pet'
+        '400':
+          description: Invalid ID supplied
+        '404':
+          description: Not found
+    delete:
+      tags:
+        - pet
+      summary: Cria um novo pet
+      operationId: deleteByIdPet
+      parameters:
+        - name: id
+          in: path
+          description: ID of to return
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '400':
+          description: Invalid pet value
+
+  /servicos:
+    get:
+      tags:
+        - servico
+      summary: Retorna uma lista de serviços
+      operationId: getAllServicos
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Servico'
+    post:
+      tags:
+        - servico
+      summary: Cria um novo serviço
+      operationId: postServico
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Servico'
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Servico'
+  /servicos/{id}:
+    get:
+      tags:
+        - servico
+      summary: Retorna um servico
+      operationId: getByIdServicos
+      parameters:
+        - name: id
+          in: path
+          description: ID of to return
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Servico'
+        '400':
+          description: Invalid ID supplied
+        '404':
+          description: Not found
+    patch:
+      tags:
+        - servico
+      summary: Cria um novo servico
+      operationId: pachByIdServico
+      parameters:
+        - name: id
+          in: path
+          description: ID of to return
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Servico'
+      responses:
+        '200':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Servico'
+        '400':
+          description: Invalid ID supplied
+        '404':
+          description: Not found
+    delete:
+      tags:
+        - servico
+      summary: Cria um novo servico
+      operationId: deleteByIdServico
+      parameters:
+        - name: id
+          in: path
+          description: ID of to return
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '400':
+          description: Invalid pet value
+
+  /pagamentos:
+    get:
+      tags:
+        - pagamento
+      summary: Retorna uma lista de pagamentos
+      operationId: getAllPagamentos
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Pagamento'
+    post:
+      tags:
+        - pagamento
+      summary: Cria um novo pagamento
+      operationId: postPagamento
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Pagamento'
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Pagamento'
+
+  /pagamentos/{id}:
+    get:
+      tags:
+        - pagamento
+      summary: Retorna um pagamento
+      operationId: getByIdPagamentos
+      parameters:
+        - name: id
+          in: path
+          description: ID of to return
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Pagamento'
+        '400':
+          description: Invalid ID supplied
+        '404':
+          description: Not found
+    patch:
+      tags:
+        - pagamento
+      summary: Cria um novo pagamento
+      operationId: pachByIdPagamento
+      parameters:
+        - name: id
+          in: path
+          description: ID of to return
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Pagamento'
+      responses:
+        '200':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Pagamento'
+        '400':
+          description: Invalid ID supplied
+        '404':
+          description: Not found
+    delete:
+      tags:
+        - pagamento
+      summary: Cria um novo pagamento
+      operationId: deleteByIdPagamento
+      parameters:
+        - name: id
+          in: path
+          description: ID of to return
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '400':
+          description: Invalid pet value
+
+  /historicos:
+    get:
+      tags:
+        - historico
+      summary: Retorna uma lista de pagamentos
+      operationId: getAllHistorico
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Historico'
+    post:
+      tags:
+        - historico
+      summary: Cria um novo pagamento
+      operationId: postHistorico
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Historico'
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Historico'
+
+  /historicos/{id}:
+    get:
+      tags:
+        - historico
+      summary: Retorna um historico
+      operationId: getById
+      parameters:
+        - name: id
+          in: path
+          description: ID of to return
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Historico'
+        '400':
+          description: Invalid ID supplied
+        '404':
+          description: Not found
+    patch:
+      tags:
+        - historico
+      summary: Cria um novo historico
+      operationId: pachByIdHistorico
+      parameters:
+        - name: id
+          in: path
+          description: ID of to return
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Historico'
+      responses:
+        '200':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Historico'
+        '400':
+          description: Invalid ID supplied
+        '404':
+          description: Not found
+    delete:
+      tags:
+        - historico
+      summary: Cria um novo historico
+      operationId: deleteByIdHistorico
+      parameters:
+        - name: id
+          in: path
+          description: ID of to return
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '400':
+          description: Invalid pet value
+
+components:
+  schemas:
+    Cadastro:
+      type: object
+      properties:
+        cadastroID:
+          type: integer
+          format: int64
+        dataAbertura:
+          type: string
+          format: date
+        origem:
+          type: string
+        clienteID:
+          type: integer
+
+    Cliente:
+      type: object
+      properties:
+        clienteID:
+          type: integer
+          format: int64
+        username:
+          type: string
+        senha:
+          type: string
+        nome:
+          type: string
+        dataNascimento:
+          type: string
+          format: date
+        identidade:
+          type: string
+        telefone:
+          type: string
+        email:
+          type: string
+        enderecoID:
+          type: integer
+        pets:
+          type: object
+        pagamentos:
+          type: object
+
+    Endereco:
+      type: object
+      properties:
+        enderecoID:
+          type: integer
+          format: int64
+        logradouro:
+          type: string
+        tipo:
+          type: string
+        complemento:
+          type: string
+        bairro:
+          type: string
+        cidade:
+          type: string
+        estado:
+          type: string
+        pais:
+          type: string
+        cep :
+          type: string
+
+    Pet:
+      type: object
+      properties:
+        petID:
+          type: integer
+          format: int64
+        especie:
+          type: string
+        nome:
+          type: string
+        idade:
+          type: integer
+        raca:
+          type: string
+        porte:
+          type: string
+        informacoesAdicionais:
+          type: string
+        servico:
+          type: integer
+
+    Servico:
+      type: object
+      properties:
+        servicoID:
+          type: integer
+          format: int64
+        preco:
+          type: number
+          format: float
+        tipo:
+          type: string
+        status:
+          type: string
+        historicoId:
+          type: integer
+
+    Pagamento:
+      type: object
+      properties:
+        pagamentoID:
+          type: integer
+          format: int64
+        servicos:
+          type: integer
+        total:
+          type: number
+          format: float
+        statusPagto:
+          type: string
+        tipoPagto:
+          type: string
+
+    Historico:
+      type: object
+      properties:
+        historicoID:
+          type: integer
+          format: int64
+        servicoID:
+          type: integer
+        petID:
+          type: integer
+        descricao:
+          type: string

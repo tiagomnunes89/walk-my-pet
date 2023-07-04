@@ -1,9 +1,5 @@
 package br.edu.iftm.walkmypet.data.vo;
 
-import br.edu.iftm.walkmypet.models.Endereco;
-import br.edu.iftm.walkmypet.models.Pagamento;
-import br.edu.iftm.walkmypet.models.Pet;
-import jakarta.persistence.*;
 import org.springframework.hateoas.RepresentationModel;
 
 import java.io.Serializable;

@@ -3,7 +3,7 @@ package br.edu.iftm.walkmypet.services;
 import br.edu.iftm.walkmypet.controllers.HistoricoController;
 import br.edu.iftm.walkmypet.data.vo.HistoricoVO;
 import br.edu.iftm.walkmypet.mapper.DozerMapper;
-import br.edu.iftm.walkmypet.models.Historico;
+import br.edu.iftm.walkmypet.model.Historico;
 import br.edu.iftm.walkmypet.repositories.HistoricoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

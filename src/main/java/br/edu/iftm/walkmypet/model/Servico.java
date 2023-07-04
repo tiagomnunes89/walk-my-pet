@@ -1,4 +1,4 @@
-package br.edu.iftm.walkmypet.models;
+package br.edu.iftm.walkmypet.model;
 
 import jakarta.persistence.*;
 
@@ -19,6 +19,10 @@ public class Servico {
     @OneToOne
     @JoinColumn(name = "historicoID")
     private Historico historico;
+
+    @ManyToOne
+    @JoinColumn(name="pagamento_pagamentoID")
+    private Pagamento pagamento;
 
     public Servico(Long servicoID, Float preco, String tipo, String status, Historico historico) {
         this.servicoID = servicoID;

@@ -3,7 +3,7 @@ package br.edu.iftm.walkmypet.services;
 import br.edu.iftm.walkmypet.controllers.CadastroController;
 import br.edu.iftm.walkmypet.data.vo.CadastroVO;
 import br.edu.iftm.walkmypet.mapper.DozerMapper;
-import br.edu.iftm.walkmypet.models.Cadastro;
+import br.edu.iftm.walkmypet.model.Cadastro;
 import br.edu.iftm.walkmypet.repositories.CadastroRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -38,23 +38,6 @@ public class CadastroService {
         return null;
     }
 
-    public List<CadastroVO> findCadastroByName(String name) {
-        List<Cadastro> cadastroDbList = repository.findCadastroByName(name);
-        var cadastros = DozerMapper.parseListObject(cadastroDbList, CadastroVO.class);
-        cadastros.forEach(cadastro -> cadastro.add(linkTo(methodOn(CadastroController.class).findById(cadastro.getCadastroID()))
-                .withSelfRel()
-        ));
-        return cadastros;
-    }
-
-    public List<CadastroVO> findCadastroByUsername(String username) {
-        List<Cadastro> cadastroDbList = repository.findCadastroByUsername(username);
-        var cadastros = DozerMapper.parseListObject(cadastroDbList, CadastroVO.class);
-        cadastros.forEach(cadastro -> cadastro.add(linkTo(methodOn(CadastroController.class).findById(cadastro.getCadastroID()))
-                .withSelfRel()
-        ));
-        return cadastros;
-    }
     
     public CadastroVO save(CadastroVO cadastroVO) {
         if (verifyCadastro(cadastroVO)) {

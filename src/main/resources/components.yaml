@@ -1,0 +1,214 @@
+#openapi: 3.0.3
+#info:
+#  title: Swagger Petstore - OpenAPI 3.0
+#  description: |-
+#    This is a sample Pet Store Server based on the OpenAPI 3.0 specification.  You can find out more about
+#    Swagger at [https://swagger.io](https://swagger.io). In the third iteration of the pet store, we've switched to the design first approach!
+#    You can now help us improve the API whether it's by making changes to the definition itself or to the code.
+#    That way, with time, we can improve the API in general, and expose some of the new features in OAS3.
+#
+#    _If you're looking for the Swagger 2.0/OAS 2.0 version of Petstore, then click [here](https://editor.swagger.io/?url=https://petstore.swagger.io/v2/swagger.yaml). Alternatively, you can load via the `Edit > Load Petstore OAS 2.0` menu option!_
+#
+#    Some useful links:
+#    - [The Pet Store repository](https://github.com/swagger-api/swagger-petstore)
+#    - [The source API definition for the Pet Store](https://github.com/swagger-api/swagger-petstore/blob/master/src/main/resources/openapi.yaml)
+#  termsOfService: http://swagger.io/terms/
+#  contact:
+#    email: apiteam@swagger.io
+#  license:
+#    name: Apache 2.0
+#    url: http://www.apache.org/licenses/LICENSE-2.0.html
+#  version: 1.0.11
+#paths:
+#  /cadastros:
+#    get:
+#      tags:
+#        - cadastro
+#      summary: Retorna uma lista de cadastros
+#      operationId: getAllCadastro
+#      responses:
+#        '200':
+#          description: OK
+#          content:
+#            application/json:
+#              schema:
+#                type: array
+#                items:
+#                  $ref: '#/components/schemas/Cadastro'
+#    post:
+#      tags:
+#        - cadastro
+#      summary: Cria um novo cadastro
+#      operationId: postCadastro
+#      requestBody:
+#        required: true
+#        content:
+#          application/json:
+#            schema:
+#              $ref: '#/components/schemas/Cadastro'
+#      responses:
+#        '201':
+#          description: Created
+#          content:
+#            application/json:
+#              schema:
+#                $ref: '#/components/schemas/Cadastro'
+#components:
+#  schemas:
+#    Cadastro:
+#      type: object
+#      x-class-extra-annotation: "@jakarta.persistence.Entity"
+#      properties:
+#        cadastroID:
+#          type: integer
+#          format: int64
+#          x-field-extra-annotation: "@jakarta.persistence.Id@jakarta.persistence.GeneratedValue"
+#        dataAbertura:
+#          type: string
+#          format: date
+#        origem:
+#          type: string
+#        clienteID:
+#          x-field-extra-annotation: "@jakarta.persistence.OneToOne@jakarta.persistence.JoinColumn(name=\"clienteID\")"
+#          properties:
+#            clienteID:
+#              type: integer
+#              format: int64
+#            username:
+#              type: string
+#            senha:
+#              type: string
+#            nome:
+#              type: string
+#            dataNascimento:
+#              type: string
+#              format: date
+#            identidade:
+#              type: string
+#            telefone:
+#              type: string
+#            email:
+#              type: string
+#            enderecoID:
+#              type: integer
+#            pets:
+#              type: object
+#            pagamentos:
+#              type: object
+#
+#    Cliente:
+#      type: object
+#      properties:
+#        clienteID:
+#          type: integer
+#          format: int64
+#        username:
+#          type: string
+#        senha:
+#          type: string
+#        nome:
+#          type: string
+#        dataNascimento:
+#          type: string
+#          format: date
+#        identidade:
+#          type: string
+#        telefone:
+#          type: string
+#        email:
+#          type: string
+#        enderecoID:
+#          type: integer
+#        pets:
+#          type: object
+#        pagamentos:
+#          type: object
+#
+#    Endereco:
+#      type: object
+#      properties:
+#        enderecoID:
+#          type: integer
+#          format: int64
+#        logradouro:
+#          type: string
+#        tipo:
+#          type: string
+#        complemento:
+#          type: string
+#        bairro:
+#          type: string
+#        cidade:
+#          type: string
+#        estado:
+#          type: string
+#        pais:
+#          type: string
+#        cep :
+#          type: string
+#
+#    Pet:
+#      type: object
+#      properties:
+#        petID:
+#          type: integer
+#          format: int64
+#        especie:
+#          type: string
+#        nome:
+#          type: string
+#        idade:
+#          type: integer
+#        raca:
+#          type: string
+#        porte:
+#          type: string
+#        informacoesAdicionais:
+#          type: string
+#        servico:
+#          type: integer
+#
+#    Servico:
+#      type: object
+#      properties:
+#        servicoID:
+#          type: integer
+#          format: int64
+#        preco:
+#          type: number
+#          format: float
+#        tipo:
+#          type: string
+#        status:
+#          type: string
+#        historicoId:
+#          type: integer
+#
+#    Pagamento:
+#      type: object
+#      properties:
+#        pagamentoID:
+#          type: integer
+#          format: int64
+#        servicos:
+#          type: integer
+#        total:
+#          type: number
+#          format: float
+#        statusPagto:
+#          type: string
+#        tipoPagto:
+#          type: string
+#
+#    Historico:
+#      type: object
+#      properties:
+#        historicoID:
+#          type: integer
+#          format: int64
+#        servicoID:
+#          type: integer
+#        petID:
+#          type: integer
+#        descricao:
+#          type: string

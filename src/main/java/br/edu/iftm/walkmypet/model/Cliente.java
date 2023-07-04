@@ -1,4 +1,4 @@
-package br.edu.iftm.walkmypet.models;
+package br.edu.iftm.walkmypet.model;
 
 import jakarta.persistence.*;
 
@@ -10,7 +10,6 @@ import java.util.Objects;
 @Entity
 @Table(name = "cliente_table")
 public class Cliente {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long clienteID;
@@ -40,7 +39,7 @@ public class Cliente {
     @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Pagamento> pagamentos = new ArrayList<>();
 
-    public Cliente(Long clienteID, String username, String senha, String primeiro_nome, String sobrenome, Date dataNascimento, 
+    public Cliente(Long clienteID, String username, String senha, String primeiro_nome, String sobrenome, Date dataNascimento,
                    String documento, String telefone, String email, Endereco endereco, List<Pet> pets, List<Pagamento> pagamentos) {
         this.clienteID = clienteID;
         this.username = username;

@@ -71,6 +71,16 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.openapitools</groupId>
+            <artifactId>jackson-databind-nullable</artifactId>
+            <version>0.2.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-ui</artifactId>
+            <version>1.7.0</version>
+        </dependency>
     </dependencies>
     <build>
         <plugins>
@@ -78,6 +88,66 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
+            <plugin>
+                <groupId>org.openapitools</groupId>
+                <artifactId>openapi-generator-maven-plugin</artifactId>
+                <!-- RELEASE_VERSION -->
+                <version>6.6.0</version>
+                <!-- /RELEASE_VERSION -->
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <inputSpec>
+                                ${project.basedir}/src/main/resources/api.yaml
+                            </inputSpec>
+                            <generatorName>spring</generatorName>
+                            <apiPackage>br.edu.iftm.walkmypet.api</apiPackage>
+                            <modelPackage>br.edu.iftm.walkmypet.vo</modelPackage>
+                            <modelNameSuffix>VO</modelNameSuffix>
+                            <generateAliasAsModel>true</generateAliasAsModel>
+                            <configOptions>
+                                <generateSupportingFiles>true</generateSupportingFiles>
+                                <sourceFolder>gen</sourceFolder>
+                                <interfaceOnly>true</interfaceOnly>
+                                <useSpringBoot3>true</useSpringBoot3>
+                            </configOptions>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+<!--            <plugin>-->
+<!--                <groupId>org.openapitools</groupId>-->
+<!--                <artifactId>openapi-generator-maven-plugin</artifactId>-->
+<!--                &lt;!&ndash; RELEASE_VERSION &ndash;&gt;-->
+<!--                <version>6.6.0</version>-->
+<!--                &lt;!&ndash; /RELEASE_VERSION &ndash;&gt;-->
+<!--                <executions>-->
+<!--                    <execution>-->
+<!--                        <goals>-->
+<!--                            <goal>generate</goal>-->
+<!--                        </goals>-->
+<!--                        <configuration>-->
+<!--                            <inputSpec>-->
+<!--                                ${project.basedir}/src/main/resources/components.yaml-->
+<!--                            </inputSpec>-->
+<!--                            <generatorName>spring</generatorName>-->
+<!--                            <modelPackage>br.edu.iftm.walkmypet.models</modelPackage>-->
+<!--                            <modelNameSuffix>Model</modelNameSuffix>-->
+<!--                            <configOptions>-->
+<!--                                <generateApis>false</generateApis>-->
+<!--                                <generateModelDocumentation>false</generateModelDocumentation>-->
+<!--                                <generateSupportingFiles>false</generateSupportingFiles>-->
+<!--                                <delegatePattern>true</delegatePattern>-->
+<!--                                <useSpringBoot3>true</useSpringBoot3>-->
+<!--                                <hateoas>true</hateoas>-->
+<!--                            </configOptions>-->
+<!--                        </configuration>-->
+<!--                    </execution>-->
+<!--                </executions>-->
+<!--            </plugin>-->
         </plugins>
     </build>
 </project>

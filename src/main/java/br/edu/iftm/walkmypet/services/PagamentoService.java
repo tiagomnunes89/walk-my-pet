@@ -3,7 +3,7 @@ package br.edu.iftm.walkmypet.services;
 import br.edu.iftm.walkmypet.controllers.PagamentoController;
 import br.edu.iftm.walkmypet.data.vo.PagamentoVO;
 import br.edu.iftm.walkmypet.mapper.DozerMapper;
-import br.edu.iftm.walkmypet.models.Pagamento;
+import br.edu.iftm.walkmypet.model.Pagamento;
 import br.edu.iftm.walkmypet.repositories.PagamentoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

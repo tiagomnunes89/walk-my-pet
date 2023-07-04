@@ -3,7 +3,7 @@ package br.edu.iftm.walkmypet.services;
 import br.edu.iftm.walkmypet.controllers.EnderecoController;
 import br.edu.iftm.walkmypet.data.vo.EnderecoVO;
 import br.edu.iftm.walkmypet.mapper.DozerMapper;
-import br.edu.iftm.walkmypet.models.Endereco;
+import br.edu.iftm.walkmypet.model.Endereco;
 import br.edu.iftm.walkmypet.repositories.EnderecoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
