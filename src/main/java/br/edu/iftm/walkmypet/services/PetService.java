@@ -3,7 +3,7 @@ package br.edu.iftm.walkmypet.services;
 import br.edu.iftm.walkmypet.controllers.PetController;
 import br.edu.iftm.walkmypet.data.vo.PetVO;
 import br.edu.iftm.walkmypet.mapper.DozerMapper;
-import br.edu.iftm.walkmypet.models.Pet;
+import br.edu.iftm.walkmypet.model.Pet;
 import br.edu.iftm.walkmypet.repositories.PetRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -49,8 +49,8 @@ public class PetService {
         return null;
     }
 
-    public PetVO update(PetVO petVO) {
-        var dbPet = repository.findById(petVO.getPetID());
+    public PetVO update(Long id, PetVO petVO) {
+        var dbPet = repository.findById(id);
         if (dbPet.isPresent() && verifyPet(petVO)) {
             var pet = repository.save(DozerMapper.parseObject(petVO, Pet.class));
             petVO = DozerMapper.parseObject(pet, PetVO.class);

@@ -1,4 +1,4 @@
-package br.edu.iftm.walkmypet.models;
+package br.edu.iftm.walkmypet.model;
 
 import jakarta.persistence.*;
 

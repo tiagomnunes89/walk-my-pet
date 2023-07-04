@@ -1,6 +1,6 @@
 package br.edu.iftm.walkmypet.repositories;
 
-import br.edu.iftm.walkmypet.models.Pet;
+import br.edu.iftm.walkmypet.model.Pet;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

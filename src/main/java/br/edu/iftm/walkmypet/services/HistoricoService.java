@@ -3,7 +3,7 @@ package br.edu.iftm.walkmypet.services;
 import br.edu.iftm.walkmypet.controllers.HistoricoController;
 import br.edu.iftm.walkmypet.data.vo.HistoricoVO;
 import br.edu.iftm.walkmypet.mapper.DozerMapper;
-import br.edu.iftm.walkmypet.models.Historico;
+import br.edu.iftm.walkmypet.model.Historico;
 import br.edu.iftm.walkmypet.repositories.HistoricoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -49,8 +49,8 @@ public class HistoricoService {
         return null;
     }
 
-    public HistoricoVO update(HistoricoVO historicoVO) {
-        var dbHistorico = repository.findById(historicoVO.getHistoricoID());
+    public HistoricoVO update(Long id,HistoricoVO historicoVO) {
+        var dbHistorico = repository.findById(id);
         if (dbHistorico.isPresent() && verifyHistorico(historicoVO)) {
             var historico = repository.save(DozerMapper.parseObject(historicoVO, Historico.class));
             historicoVO = DozerMapper.parseObject(historico, HistoricoVO.class);

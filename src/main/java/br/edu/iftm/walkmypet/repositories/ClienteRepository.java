@@ -1,6 +1,6 @@
 package br.edu.iftm.walkmypet.repositories;
 
-import br.edu.iftm.walkmypet.models.Cliente;
+import br.edu.iftm.walkmypet.model.Cliente;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

@@ -3,7 +3,7 @@ package br.edu.iftm.walkmypet.services;
 import br.edu.iftm.walkmypet.controllers.PagamentoController;
 import br.edu.iftm.walkmypet.data.vo.PagamentoVO;
 import br.edu.iftm.walkmypet.mapper.DozerMapper;
-import br.edu.iftm.walkmypet.models.Pagamento;
+import br.edu.iftm.walkmypet.model.Pagamento;
 import br.edu.iftm.walkmypet.repositories.PagamentoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -49,8 +49,8 @@ public class PagamentoService {
         return null;
     }
 
-    public PagamentoVO update(PagamentoVO pagamentoVO) {
-        var dbPagamento = repository.findById(pagamentoVO.getPagamentoID());
+    public PagamentoVO update(Long id, PagamentoVO pagamentoVO) {
+        var dbPagamento = repository.findById(id);
         if (dbPagamento.isPresent() && verifyPagamento(pagamentoVO)) {
             var pagamento = repository.save(DozerMapper.parseObject(pagamentoVO, Pagamento.class));
             pagamentoVO = DozerMapper.parseObject(pagamento, PagamentoVO.class);

@@ -1,6 +1,6 @@
 package br.edu.iftm.walkmypet.repositories;
 
-import br.edu.iftm.walkmypet.models.Cadastro;
+import br.edu.iftm.walkmypet.model.Cadastro;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -16,4 +16,5 @@ public interface CadastroRepository extends JpaRepository<Cadastro, Long> {
 
     @Query("SELECT u FROM Cadastro u WHERE u.cliente.username LIKE %:username%")
     List<Cadastro> findCadastroByUsername(@Param("username") String username);
+
 }
