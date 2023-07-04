@@ -50,8 +50,8 @@ public class ClienteService {
         return null;
     }
 
-    public ClienteVO update(ClienteVO clienteVO) {
-        Optional<Cliente> dbCliente = repository.findById(clienteVO.getClienteID());
+    public ClienteVO update(Long id, ClienteVO clienteVO) {
+        Optional<Cliente> dbCliente = repository.findById(id);
         if (dbCliente.isPresent() && verifyCliente(clienteVO)) {
             Cliente cliente = DozerMapper.parseObject(clienteVO, Cliente.class);
             cliente = repository.save(cliente);

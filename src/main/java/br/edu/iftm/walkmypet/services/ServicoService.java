@@ -49,8 +49,8 @@ public class ServicoService {
         return null;
     }
 
-    public ServicoVO update(ServicoVO servicoVO) {
-        var dbServico = repository.findById(servicoVO.getServicoID());
+    public ServicoVO update(Long id, ServicoVO servicoVO) {
+        var dbServico = repository.findById(id);
         if (dbServico.isPresent() && verifyServico(servicoVO)) {
             var servico = repository.save(DozerMapper.parseObject(servicoVO, Servico.class));
             servicoVO = DozerMapper.parseObject(servico, ServicoVO.class);

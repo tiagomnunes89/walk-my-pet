@@ -49,8 +49,8 @@ public class PagamentoService {
         return null;
     }
 
-    public PagamentoVO update(PagamentoVO pagamentoVO) {
-        var dbPagamento = repository.findById(pagamentoVO.getPagamentoID());
+    public PagamentoVO update(Long id, PagamentoVO pagamentoVO) {
+        var dbPagamento = repository.findById(id);
         if (dbPagamento.isPresent() && verifyPagamento(pagamentoVO)) {
             var pagamento = repository.save(DozerMapper.parseObject(pagamentoVO, Pagamento.class));
             pagamentoVO = DozerMapper.parseObject(pagamento, PagamentoVO.class);

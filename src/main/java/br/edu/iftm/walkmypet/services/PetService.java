@@ -49,8 +49,8 @@ public class PetService {
         return null;
     }
 
-    public PetVO update(PetVO petVO) {
-        var dbPet = repository.findById(petVO.getPetID());
+    public PetVO update(Long id, PetVO petVO) {
+        var dbPet = repository.findById(id);
         if (dbPet.isPresent() && verifyPet(petVO)) {
             var pet = repository.save(DozerMapper.parseObject(petVO, Pet.class));
             petVO = DozerMapper.parseObject(pet, PetVO.class);

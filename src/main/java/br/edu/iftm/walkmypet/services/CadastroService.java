@@ -51,8 +51,8 @@ public class CadastroService {
         return null;
     }
 
-    public CadastroVO update(CadastroVO cadastroVO) {
-        Optional<Cadastro> dbCadastro = repository.findById(cadastroVO.getCadastroID());
+    public CadastroVO update(Long id, CadastroVO cadastroVO) {
+        Optional<Cadastro> dbCadastro = repository.findById(id);
         if (dbCadastro.isPresent() && verifyCadastro(cadastroVO)) {
             Cadastro cadastro = DozerMapper.parseObject(cadastroVO, Cadastro.class);
             cadastro = repository.save(cadastro);

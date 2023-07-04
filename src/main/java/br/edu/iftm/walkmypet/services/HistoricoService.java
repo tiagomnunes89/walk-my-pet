@@ -49,8 +49,8 @@ public class HistoricoService {
         return null;
     }
 
-    public HistoricoVO update(HistoricoVO historicoVO) {
-        var dbHistorico = repository.findById(historicoVO.getHistoricoID());
+    public HistoricoVO update(Long id,HistoricoVO historicoVO) {
+        var dbHistorico = repository.findById(id);
         if (dbHistorico.isPresent() && verifyHistorico(historicoVO)) {
             var historico = repository.save(DozerMapper.parseObject(historicoVO, Historico.class));
             historicoVO = DozerMapper.parseObject(historico, HistoricoVO.class);
