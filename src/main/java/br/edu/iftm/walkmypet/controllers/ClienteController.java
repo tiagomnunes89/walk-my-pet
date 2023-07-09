@@ -28,7 +28,7 @@ public class ClienteController {
                     content = {@Content(
                             mediaType = "application/json",
                             schema = @Schema(
-                                    implementation = br.edu.iftm.walkmypet.vo.ClienteVO.class
+                                    implementation = ClienteVO.class
                             )
                     )}
             )}
@@ -54,7 +54,7 @@ public class ClienteController {
                             mediaType = "application/json",
                             array = @ArraySchema(
                                     schema = @Schema(
-                                            implementation = br.edu.iftm.walkmypet.vo.ClienteVO.class
+                                            implementation = ClienteVO.class
                                     )
                             )
                     )}
@@ -86,7 +86,7 @@ public class ClienteController {
                             mediaType = "application/json",
                             array = @ArraySchema(
                                     schema = @Schema(
-                                            implementation = br.edu.iftm.walkmypet.vo.ClienteVO.class
+                                            implementation = ClienteVO.class
                                     )
                             )
                     )}
@@ -111,7 +111,7 @@ public class ClienteController {
                     content = {@Content(
                             mediaType = "application/json",
                             schema = @Schema(
-                                    implementation = br.edu.iftm.walkmypet.vo.ClienteVO.class
+                                    implementation = ClienteVO.class
                             )
                     )}
             ), @ApiResponse(
