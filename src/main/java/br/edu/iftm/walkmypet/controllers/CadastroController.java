@@ -28,7 +28,7 @@ public class CadastroController {
                     content = {@Content(
                             mediaType = "application/json",
                             schema = @Schema(
-                                    implementation = br.edu.iftm.walkmypet.vo.CadastroVO.class
+                                    implementation = CadastroVO.class
                             )
                     )}
             )}
@@ -54,7 +54,7 @@ public class CadastroController {
                             mediaType = "application/json",
                             array = @ArraySchema(
                                     schema = @Schema(
-                                            implementation = br.edu.iftm.walkmypet.vo.CadastroVO.class
+                                            implementation = CadastroVO.class
                                     )
                             )
                     )}
@@ -86,7 +86,7 @@ public class CadastroController {
                             mediaType = "application/json",
                             array = @ArraySchema(
                                     schema = @Schema(
-                                            implementation = br.edu.iftm.walkmypet.vo.CadastroVO.class
+                                            implementation = CadastroVO.class
                                     )
                             )
                     )}
@@ -111,7 +111,7 @@ public class CadastroController {
                     content = {@Content(
                             mediaType = "application/json",
                             schema = @Schema(
-                                    implementation = br.edu.iftm.walkmypet.vo.CadastroVO.class
+                                    implementation = CadastroVO.class
                             )
                     )}
             ), @ApiResponse(
