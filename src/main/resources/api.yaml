@@ -3,7 +3,7 @@ info:
   title: Exemplo de API para UML
   version: 1.0.0
 servers:
-  - url: http://api.example.com/v1
+  - url: http://localhost:8080/
 paths:
   /cadastros:
     get:
