@@ -3,7 +3,7 @@ info:
   title: Exemplo de API para UML
   version: 1.0.0
 servers:
-  - url: http://localhost:8080/
+  - url: http://localhost:8080/v1
 paths:
   /cadastros:
     get:
@@ -772,7 +772,7 @@ components:
         origem:
           type: string
         clienteID:
-          type: integer
+          $ref: '#/components/schemas/Cliente'
 
     Cliente:
       type: object
@@ -796,11 +796,15 @@ components:
         email:
           type: string
         enderecoID:
-          type: integer
+          $ref: '#/components/schemas/Endereco'
         pets:
-          type: object
+          type: array
+          items:
+            $ref: '#/components/schemas/Pet'
         pagamentos:
-          type: object
+          type: array
+          items:
+            $ref: '#/components/schemas/Pagamento'
 
     Endereco:
       type: object
@@ -844,7 +848,7 @@ components:
         informacoesAdicionais:
           type: string
         servico:
-          type: integer
+          $ref: '#/components/schemas/Servico'
 
     Servico:
       type: object
@@ -860,7 +864,7 @@ components:
         status:
           type: string
         historicoId:
-          type: integer
+          $ref: '#/components/schemas/Historico'
 
     Pagamento:
       type: object

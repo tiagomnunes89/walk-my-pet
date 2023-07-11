@@ -20,6 +20,7 @@ public class ServicoService {
     @Autowired
     private ServicoRepository repository;
 
+
     public List<ServicoVO> findAll() {
         var servicoDbList = repository.findAll();
         var servicos = DozerMapper.parseListObject(servicoDbList, ServicoVO.class);
