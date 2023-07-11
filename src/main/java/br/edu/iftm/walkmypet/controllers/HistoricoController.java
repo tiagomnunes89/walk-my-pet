@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/historicos")
+@RequestMapping("/v1")
 public class HistoricoController {
     
     @Autowired
@@ -104,19 +104,16 @@ public class HistoricoController {
     }
 
     @Operation(
-            operationId = "getAllHistorico",
-            summary = "Retorna uma lista de pagamentos",
+            operationId = "deleteByIdHistorico",
+            summary = "Cria um novo historico",
             tags = { "historico" },
             responses = {
-                    @ApiResponse(responseCode = "200", description = "OK", content = {
-                            @Content(mediaType = "application/json", array = @ArraySchema(schema = @Schema(implementation = br.edu.iftm.walkmypet.vo.HistoricoVO.class)))
-                    })
+                    @ApiResponse(responseCode = "400", description = "Invalid pet value")
             }
     )
     @RequestMapping(
-            method = RequestMethod.GET,
-            value = "/historicos",
-            produces = { "application/json" }
+            method = RequestMethod.DELETE,
+            value = "/historicos/{id}"
     )
     public ResponseEntity<Void> delete(@PathVariable Long id) {
         historicoService.delete(id);
