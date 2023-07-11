@@ -771,7 +771,7 @@ components:
           format: date
         origem:
           type: string
-        clienteID:
+        cliente:
           $ref: '#/components/schemas/Cliente'
 
     Cliente:
@@ -847,8 +847,12 @@ components:
           type: string
         informacoesAdicionais:
           type: string
-        servico:
-          $ref: '#/components/schemas/Servico'
+        cliente:
+          $ref: '#/components/schemas/Cliente'
+        servicos:
+          type: array
+          items:
+            $ref: '#/components/schemas/Servico'
 
     Servico:
       type: object
@@ -863,8 +867,10 @@ components:
           type: string
         status:
           type: string
-        historicoId:
+        historico:
           $ref: '#/components/schemas/Historico'
+        pagamento:
+          $ref: '#/components/schemas/Pagamento'
 
     Pagamento:
       type: object
@@ -872,8 +878,12 @@ components:
         pagamentoID:
           type: integer
           format: int64
+        cliente:
+          $ref: '#/components/schemas/Cliente'
         servicos:
-          type: integer
+          type: array
+          items:
+            $ref: '#/components/schemas/Servico'
         total:
           type: number
           format: float
@@ -888,9 +898,9 @@ components:
         historicoID:
           type: integer
           format: int64
-        servicoID:
-          type: integer
-        petID:
-          type: integer
+        servico:
+          $ref: '#/components/schemas/Servico'
+        pet:
+          $ref: '#/components/schemas/Servico'
         descricao:
           type: string

@@ -24,17 +24,19 @@ public class Servico {
     @JoinColumn(name="pagamento_pagamentoID")
     private Pagamento pagamento;
 
-    public Servico(Long servicoID, Float preco, String tipo, String status, Historico historico) {
+    public Servico(Long servicoID, Float preco, String tipo, String status, Historico historico, Pagamento pagamento) {
         this.servicoID = servicoID;
         this.preco = preco;
         this.tipo = tipo;
         this.status = status;
         this.historico = historico;
+        this.pagamento = pagamento;
     }
 
 
-    public Servico() {
+    public Servico(Pagamento pagamento) {
 
+        this.pagamento = pagamento;
     }
 
     public Long getServicoID() {
