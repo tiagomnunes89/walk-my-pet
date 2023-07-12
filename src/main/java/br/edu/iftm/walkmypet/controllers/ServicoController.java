@@ -27,7 +27,7 @@ public class ServicoController {
             tags = { "servico" },
             responses = {
                     @ApiResponse(responseCode = "201", description = "Created", content = {
-                            @Content(mediaType = "application/json", schema = @Schema(implementation = br.edu.iftm.walkmypet.vo.ServicoVO.class))
+                            @Content(mediaType = "application/json", schema = @Schema(implementation = ServicoVO.class))
                     })
             }
     )
@@ -47,7 +47,7 @@ public class ServicoController {
             tags = { "servico" },
             responses = {
                     @ApiResponse(responseCode = "200", description = "OK", content = {
-                            @Content(mediaType = "application/json", array = @ArraySchema(schema = @Schema(implementation = br.edu.iftm.walkmypet.vo.ServicoVO.class)))
+                            @Content(mediaType = "application/json", array = @ArraySchema(schema = @Schema(implementation = ServicoVO.class)))
                     }),
                     @ApiResponse(responseCode = "400", description = "Invalid ID supplied"),
                     @ApiResponse(responseCode = "404", description = "Not found")
@@ -68,7 +68,7 @@ public class ServicoController {
             tags = { "servico" },
             responses = {
                     @ApiResponse(responseCode = "200", description = "OK", content = {
-                            @Content(mediaType = "application/json", array = @ArraySchema(schema = @Schema(implementation = br.edu.iftm.walkmypet.vo.ServicoVO.class)))
+                            @Content(mediaType = "application/json", array = @ArraySchema(schema = @Schema(implementation = ServicoVO.class)))
                     })
             }
     )
@@ -87,7 +87,7 @@ public class ServicoController {
             tags = { "servico" },
             responses = {
                     @ApiResponse(responseCode = "200", description = "Created", content = {
-                            @Content(mediaType = "application/json", schema = @Schema(implementation = br.edu.iftm.walkmypet.vo.ServicoVO.class))
+                            @Content(mediaType = "application/json", schema = @Schema(implementation = ServicoVO.class))
                     }),
                     @ApiResponse(responseCode = "400", description = "Invalid ID supplied"),
                     @ApiResponse(responseCode = "404", description = "Not found")

@@ -26,7 +26,7 @@ public class PetController {
             tags = { "pet" },
             responses = {
                     @ApiResponse(responseCode = "201", description = "Created", content = {
-                            @Content(mediaType = "application/json", schema = @Schema(implementation = br.edu.iftm.walkmypet.vo.PetVO.class))
+                            @Content(mediaType = "application/json", schema = @Schema(implementation = PetVO.class))
                     })
             }
     )
@@ -46,7 +46,7 @@ public class PetController {
             tags = { "pet" },
             responses = {
                     @ApiResponse(responseCode = "200", description = "OK", content = {
-                            @Content(mediaType = "application/json", array = @ArraySchema(schema = @Schema(implementation = br.edu.iftm.walkmypet.vo.PetVO.class)))
+                            @Content(mediaType = "application/json", array = @ArraySchema(schema = @Schema(implementation = PetVO.class)))
                     })
             }
     )
@@ -55,8 +55,8 @@ public class PetController {
             value = "/pets",
             produces = { "application/json" }
     )
-    public ResponseEntity<PetVO> findById(@PathVariable Long id) {
-        return ResponseEntity.ok(petService.findById(id));
+    public ResponseEntity<List<PetVO>> findAll() {
+        return ResponseEntity.ok(petService.findAll());
     }
 
     @Operation(
@@ -65,7 +65,7 @@ public class PetController {
             tags = { "pet" },
             responses = {
                     @ApiResponse(responseCode = "200", description = "OK", content = {
-                            @Content(mediaType = "application/json", array = @ArraySchema(schema = @Schema(implementation = br.edu.iftm.walkmypet.vo.PetVO.class)))
+                            @Content(mediaType = "application/json", array = @ArraySchema(schema = @Schema(implementation = PetVO.class)))
                     }),
                     @ApiResponse(responseCode = "400", description = "Invalid ID supplied"),
                     @ApiResponse(responseCode = "404", description = "Not found")
@@ -76,8 +76,8 @@ public class PetController {
             value = "/pets/{id}",
             produces = { "application/json" }
     )
-    public ResponseEntity<List<PetVO>> findAll() {
-        return ResponseEntity.ok(petService.findAll());
+    public ResponseEntity<PetVO> findById(@PathVariable Long id) {
+        return ResponseEntity.ok(petService.findById(id));
     }
 
     @Operation(
@@ -86,7 +86,7 @@ public class PetController {
             tags = { "pet" },
             responses = {
                     @ApiResponse(responseCode = "200", description = "Created", content = {
-                            @Content(mediaType = "application/json", schema = @Schema(implementation = br.edu.iftm.walkmypet.vo.PetVO.class))
+                            @Content(mediaType = "application/json", schema = @Schema(implementation = PetVO.class))
                     }),
                     @ApiResponse(responseCode = "400", description = "Invalid ID supplied"),
                     @ApiResponse(responseCode = "404", description = "Not found")

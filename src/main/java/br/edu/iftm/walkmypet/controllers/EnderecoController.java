@@ -26,7 +26,7 @@ public class EnderecoController {
             tags = { "endereco" },
             responses = {
                     @ApiResponse(responseCode = "201", description = "Created", content = {
-                            @Content(mediaType = "application/json", schema = @Schema(implementation = br.edu.iftm.walkmypet.vo.EnderecoVO.class))
+                            @Content(mediaType = "application/json", schema = @Schema(implementation = EnderecoVO.class))
                     })
             }
     )
@@ -46,7 +46,7 @@ public class EnderecoController {
             tags = { "endereco" },
             responses = {
                     @ApiResponse(responseCode = "200", description = "OK", content = {
-                            @Content(mediaType = "application/json", array = @ArraySchema(schema = @Schema(implementation = br.edu.iftm.walkmypet.vo.EnderecoVO.class)))
+                            @Content(mediaType = "application/json", array = @ArraySchema(schema = @Schema(implementation = EnderecoVO.class)))
                     }),
                     @ApiResponse(responseCode = "400", description = "Invalid ID supplied"),
                     @ApiResponse(responseCode = "404", description = "Not found")
@@ -67,7 +67,7 @@ public class EnderecoController {
             tags = { "endereco" },
             responses = {
                     @ApiResponse(responseCode = "200", description = "OK", content = {
-                            @Content(mediaType = "application/json", array = @ArraySchema(schema = @Schema(implementation = br.edu.iftm.walkmypet.vo.EnderecoVO.class)))
+                            @Content(mediaType = "application/json", array = @ArraySchema(schema = @Schema(implementation = EnderecoVO.class)))
                     })
             }
     )
@@ -86,7 +86,7 @@ public class EnderecoController {
             tags = { "endereco" },
             responses = {
                     @ApiResponse(responseCode = "200", description = "Created", content = {
-                            @Content(mediaType = "application/json", schema = @Schema(implementation = br.edu.iftm.walkmypet.vo.EnderecoVO.class))
+                            @Content(mediaType = "application/json", schema = @Schema(implementation = EnderecoVO.class))
                     }),
                     @ApiResponse(responseCode = "400", description = "Invalid ID supplied"),
                     @ApiResponse(responseCode = "404", description = "Not found")
